@@ -1,6 +1,6 @@
 from PIL import Image
 
-res = 10
+res = 1000
 
 img = Image.new('RGB', (res*3, res))
 
@@ -15,6 +15,7 @@ def logistic_iter(r, l, d):
     return l
 
 for r in [i/res for i in range(res, res*4)]:
-    print([j//(1/res) for j in logistic_iter(r, [1-(i/10) for i in range(10)], 20)])
+    for i in [j//(1/res) for j in logistic_iter(r, [1-(i/10) for i in range(10)], 20)]:
+        px[r*res-res, res-i-1] = (255,255,255)
 
 img.save('image.png')
