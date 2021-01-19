@@ -1,8 +1,8 @@
 from PIL import Image
 
-res = input("Image size and resolution: ")
+res = int(input("Image size and resolution: "))
 
-iter = input("Iteration length: ")
+iter = int(input("Iteration length: "))
 
 img = Image.new('RGB', (res*3, res))
 
