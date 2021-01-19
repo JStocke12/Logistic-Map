@@ -1,3 +1,9 @@
+from PIL import Image
+
+img = Image.new('RGB', (300, 100))
+
+px = img.load()
+
 def logistic_map(r, l):
     return [r*i*(1-i) for i in l]
 
@@ -7,3 +13,5 @@ def logistic_iter(r, l, d):
     return l
 
 print([1-(i/10) for i in range(10)], logistic_iter(3.2, [1-(i/10) for i in range(10)], 20))
+
+img.save('image.png')
