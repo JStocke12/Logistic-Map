@@ -4,7 +4,7 @@ res = int(input("Image size and resolution: "))
 
 iter = int(input("Iteration length: "))
 
-img = Image.new('RGB', (res*3, res))
+img = Image.new('1', (res*3, res))
 
 px = img.load()
 
@@ -18,6 +18,6 @@ def logistic_iter(r, l, d):
 
 for r in [i/res for i in range(res, res*4)]:
     for i in [j//(1/res) for j in logistic_iter(r, [1-(i/iter) for i in range(iter)], 2*iter)]:
-        px[r*res-res, res-i-1] = (255,255,255)
+        px[r*res-res, res-i-1] = 1
 
-img.save('image.png')
+img.save('image.bmp')
